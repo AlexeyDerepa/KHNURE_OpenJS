@@ -26,6 +26,9 @@ function getFriendlyNumbers(start, end) {
 
 
     let a = [];
+    let result = [];
+
+
 
     for(let i = start; i <= end ; i++)
     {   
@@ -34,8 +37,11 @@ function getFriendlyNumbers(start, end) {
 
     for(let i = start; i <= end ; i++) {
         if(a[a[i]] == i && i  < a[i]) {        
-            return [[ i, a[i] ]];
+            result.push([ i, a[i] ]);
         }
+    }
+    if(result.length > 0) {
+        return result;
     }
     return [];
 }
